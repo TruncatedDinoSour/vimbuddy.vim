@@ -35,7 +35,7 @@ function! VimBuddy()
         let v:warningmsg = v:warningmsg . " "
         let s:vimbuddy_warn = v:warningmsg
 
-        return ":3"
+        return ":<"
     elseif exists("g:vimbuddy_tmsg") || s:vimbuddy_msg != v:statusmsg
         let v:statusmsg = v:statusmsg . " "
         let s:vimbuddy_msg = v:statusmsg
