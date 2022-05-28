@@ -1,5 +1,7 @@
 # VimBuddy.vim
 
+[![Preview](https://asciinema.org/a/rhNFz5lLaDxKpatZQPbYqnaXQ.svg)](https://asciinema.org/a/rhNFz5lLaDxKpatZQPbYqnaXQ)
+
 > Puts a smiley on your status line. Nose will rotate on <Left> and <Right>
 > Will frown on errors and warnings
 
