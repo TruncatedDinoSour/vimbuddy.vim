@@ -1,6 +1,6 @@
 " Description: VimBuddy statusline character
 " Author:      Flemming Madsen <vim@themadsens.dk>
-" Modified:    August 2007
+" Modified:    May 2022
 " Version:     0.9.2
 "
 " Usage:       Insert %{VimBuddy()} into your 'statusline'
@@ -22,15 +22,15 @@ function! VimBuddy()
 
     if g:actual_curbuf != bufnr("%")
         " Not my buffer, sleeping
-        return "|-o"
+        return "B)"
     elseif s:vimbuddy_err != v:errmsg
         let v:errmsg = v:errmsg . " "
         let s:vimbuddy_err = v:errmsg
-        return ":-("
+        return "3:"
     elseif s:vimbuddy_warn != v:warningmsg
         let v:warningmsg = v:warningmsg . " "
         let s:vimbuddy_warn = v:warningmsg
-        return "(-:"
+        return ":3"
     elseif s:vimbuddy_msg != v:statusmsg
         let v:statusmsg = v:statusmsg . " "
         let s:vimbuddy_msg = v:statusmsg
@@ -38,18 +38,18 @@ function! VimBuddy()
         let num = substitute(v:statusmsg, '^\([0-9]*\).*', '\1', '') + 0
         " How impressed should we be
         if test != "" && num > 20
-            let str = ":-O"
+            let str = ":0"
         elseif test != "" && num
-            let str = ":-o"
+            let str = ":o"
         else
-            let str = ":-/"
+            let str = ":/"
         endif
-		  let s:vimbuddy_onemore = str
-		  return str
-	 elseif s:vimbuddy_onemore != ""
-		let str = s:vimbuddy_onemore
-		let s:vimbuddy_onemore = ""
-		return str
+          let s:vimbuddy_onemore = str
+          return str
+     elseif s:vimbuddy_onemore != ""
+        let str = s:vimbuddy_onemore
+        let s:vimbuddy_onemore = ""
+        return str
     endif
 
     if ! exists("b:lastcol")
@@ -72,10 +72,10 @@ function! VimBuddy()
         else
             let ch = '|'
         endif
-        return ":" . ch . ")"
+        return ":" . ch . "3"
     endif
     let b:lastlineno = line(".")
 
     " Happiness is my favourite mood
-    return ":-)"
+    return ":3"
 endfunction
