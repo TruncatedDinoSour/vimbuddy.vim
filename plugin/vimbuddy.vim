@@ -26,17 +26,17 @@ function! VimBuddy()
     if g:actual_curbuf != bufnr("%")
         " Not my buffer, sleeping
         return "B)"
-    elseif g:vimbuddy_terr || s:vimbuddy_err != v:errmsg
+    elseif exists("g:vimbuddy_terr") || s:vimbuddy_err != v:errmsg
         let v:errmsg = v:errmsg . " "
         let s:vimbuddy_err = v:errmsg
 
         return "3:"
-    elseif g:vimbuddy_twarn || s:vimbuddy_warn != v:warningmsg
+    elseif exists("g:vimbuddy_twarn") || s:vimbuddy_warn != v:warningmsg
         let v:warningmsg = v:warningmsg . " "
         let s:vimbuddy_warn = v:warningmsg
 
         return ":3"
-    elseif g:vimbuddy_tmsg || s:vimbuddy_msg != v:statusmsg
+    elseif exists("g:vimbuddy_tmsg") || s:vimbuddy_msg != v:statusmsg
         let v:statusmsg = v:statusmsg . " "
         let s:vimbuddy_msg = v:statusmsg
         let test = matchstr(v:statusmsg, 'lines *$')
