@@ -1,5 +1,6 @@
 " Description: VimBuddy statusline character
 " Author:      Flemming Madsen <vim@themadsens.dk>
+" Maintainer:  Ari Archer <ari@ari.lt>
 " Modified:    May 2022
 " Version:     0.9.2
 "
